@@ -1,0 +1,11 @@
+struct BlockID;
+struct TextureUVCoordinateSet;
+struct BlockPos;
+struct Vec3;
+struct BlockSource;
+struct ItemInstance;
+struct AABB;
+struct BlockTessellator;
+struct FactorizationRenderer;
+struct Recipes::Type;
+class BlockRender;

@@ -1,0 +1,7 @@
+-G Ninja
+-DCMAKE_TOOLCHAIN_FILE="D:\Android\android-sdk\ndk\16.1.4479499\build\cmake\android.toolchain.cmake"
+-DCMAKE_SYSTEM_NAME=Android
+-DANDROID_ABI=armeabi-v7a
+-DCMAKE_ANDROID_NDK="D\:\Android\android-sdk\ndk\16.1.4479499"
+-DCMAKE_SYSTEM_VERSION=27
+-DCMAKE_ANDROID_NDK_TOOLCHAIN_VERSION=clang

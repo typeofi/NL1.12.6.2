@@ -1,0 +1,41 @@
+#version 100
+uniform sampler2D TEXTURE_0;
+uniform sampler2D TEXTURE_1;
+
+varying vec2 uv;
+varying vec4 color;
+varying vec4 worldPosition;
+varying vec4 fogColor;
+
+void main()
+{
+	vec4 albedo = texture2D( TEXTURE_0, uv);
+
+#ifdef ALPHA_TEST
+	if (albedo.a < 0.5)
+		discard;
+#endif
+
+	albedo.a *= color.a;
+
+	vec2 occlusionUV = worldPosition.xz;
+	vec4 occlusionTexture = texture2D( TEXTURE_1, occlusionUV);
+
+	// clamp the uvs
+	if ( occlusionUV.x >= 0.0 && occlusionUV.x <= 1.0 && 
+		 occlusionUV.y >= 0.0 && occlusionUV.y <= 1.0 && 
+		 worldPosition.y < occlusionTexture.a) {
+		albedo.a = 0.0;
+	}
+
+	float mixAmount = clamp ( (worldPosition.y - occlusionTexture.a)*10.0, 0.0, 1.0);
+	vec3 lighting = mix(occlusionTexture.rgb, color.rgb, mixAmount);
+	vec4 finalOutput = albedo;
+	finalOutput.rgb *= lighting.rgb;
+
+	//apply fog
+	gl_FragColor.rgb = mix( finalOutput.rgb, fogColor.rgb, fogColor.a );
+	gl_FragColor.a = finalOutput.a;
+}
+
+

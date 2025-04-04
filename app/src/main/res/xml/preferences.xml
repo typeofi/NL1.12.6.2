@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/pref_textures_title">
+        <net.zhuoweizhang.mcpelauncher.ui.SwitchPreference
+            android:title="@string/pref_texture_pack"
+            android:key="zz_texture_pack_enable"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_addons_title">
+        <net.zhuoweizhang.mcpelauncher.ui.SwitchPreference
+            android:title="@string/pref_zz_safe_mode"
+            android:key="zz_safe_mode"
+            android:summary="@string/pref_zz_safe_mode_summary"
+            android:defaultValue="false" />
+        <net.zhuoweizhang.mcpelauncher.ui.SwitchPreference
+            android:title="@string/manage_patches"
+            android:key="zz_manage_patches"
+            android:defaultValue="true" />
+        <net.zhuoweizhang.mcpelauncher.ui.SwitchPreference
+            android:title="@string/manage_addons"
+            android:key="zz_load_native_addons"
+            android:defaultValue="true" />
+        <net.zhuoweizhang.mcpelauncher.ui.SwitchPreference
+            android:title="@string/pref_zz_script_enable"
+            android:key="zz_script_enable"
+            android:defaultValue="true" />
+        <net.zhuoweizhang.mcpelauncher.ui.SwitchPreference
+            android:title="@string/pref_zz_reimport_scripts"
+            android:key="zz_reimport_scripts"
+            android:dependency="zz_script_enable"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_gfx_title">
+        <CheckBoxPreference
+            android:title="@string/pref_zz_immersive_mode"
+            android:key="zz_immersive_mode"
+            android:summary="@string/pref_zz_immersive_mode_summary"
+            android:defaultValue="false" />
+        <EditTextPreference
+            android:title="@string/pref_zz_custom_dpi"
+            android:key="zz_custom_dpi"
+            android:summary="@string/pref_zz_custom_dpi_summary"
+            android:defaultValue=""
+            android:inputType="numberDecimal" />
+        <net.zhuoweizhang.mcpelauncher.ui.SwitchPreference
+            android:title="@string/pref_zz_desktop_gui"
+            android:key="zz_desktop_gui"
+            android:summary="@string/pref_zz_desktop_gui_summary"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_ctrl_title">
+        <CheckBoxPreference
+            android:title="@string/pref_zz_longvibration"
+            android:key="zz_longvibration"
+            android:summary="@string/pref_zz_longvibration_summary"
+            android:defaultValue="false" />
+        <CheckBoxPreference
+            android:title="@string/pref_zz_sensorcontrol"
+            android:key="zz_sensorcontrol"
+            android:summary="@string/pref_zz_sensorcontrol_summary"
+            android:dependency="zz_script_enable"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_other_title">
+        <CheckBoxPreference
+            android:title="@string/pref_zz_hovercar_hide"
+            android:key="zz_hovercar_hide"
+            android:defaultValue="false" />
+        <net.zhuoweizhang.mcpelauncher.ui.SwitchPreference
+            android:title="@string/pref_zz_enable_kamcord"
+            android:key="zz_enable_kamcord"
+            android:defaultValue="false" />
+        <Preference
+            android:title="@string/pref_zz_watch_recording"
+            android:key="zz_watch_recording" />
+        <Preference
+            android:title="@string/pref_zz_reshare_last_recording"
+            android:key="zz_reshare_last_recording" />
+        <net.zhuoweizhang.mcpelauncher.ui.SwitchPreference
+            android:title="@string/pref_zz_theme_dark"
+            android:key="zz_theme_dark"
+            android:defaultValue="false" />
+        <CheckBoxPreference
+            android:title="@string/pref_zz_show_insert_text"
+            android:key="zz_show_insert_text"
+            android:defaultValue="false" />
+        <CheckBoxPreference
+            android:title="@string/pref_zz_legacy_keyboard_input"
+            android:key="zz_legacy_keyboard_input"
+            android:summary="@string/pref_zz_legacy_keyboard_input_summary"
+            android:defaultValue="false" />
+        <CheckBoxPreference
+            android:title="@string/pref_zz_legacy_live_patch"
+            android:key="zz_legacy_live_patch"
+            android:summary="@string/pref_zz_legacy_live_patch_summary"
+            android:defaultValue="false" />
+        <CheckBoxPreference
+            android:title="@string/pref_zz_signal_handler"
+            android:key="zz_signal_handler"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_support_title">
+        <Preference
+            android:title="@string/nerdy_stuff_page"
+            android:key="nerdy_stuff_page" />
+        <ListPreference
+            android:title="@string/pref_zz_language_override"
+            android:key="zz_language_override" />
+        <Preference
+            android:title="@string/about_about"
+            android:key="zz_about" />
+        <Preference
+            android:title="@string/about_go_to_forums"
+            android:key="zz_go_to_forums" />
+    </PreferenceCategory>
+</PreferenceScreen>

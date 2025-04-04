@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:divider="@null"
+        android:dividerHeight="0dp" />
+
+    <!--              style="?android:attr/cardBackgroundStyle"/>-->
+    <ImageButton
+        android:id="@+id/manage_textures_select"
+        style="@style/simple_fab"
+        android:layout_gravity="bottom|right|center_vertical|center_horizontal|center"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_add_white_24dp" />
+</FrameLayout>

@@ -1,0 +1,56 @@
+var java = {
+    lang: function (){
+        Thread =  function (){
+            run = function (){};
+            toString = function (){};
+            isInterrupted = function (){};
+            currentThread = function (){};
+            getName = function (){};
+            join = function (arg0/*long*/){};
+            join = function (arg0/*long*/, arg1/*int*/){};
+            join = function (){};
+            getThreadGroup = function (){};
+            getStackTrace = function (){};
+            holdsLock = function (arg0/*Object*/){};
+            checkAccess = function (){};
+            dumpStack = function (){};
+            setDaemon = function (arg0/*boolean*/){};
+            setPriority = function (arg0/*int*/){};
+            start = function (){};
+            yield = function (){};
+            activeCount = function (){};
+            countStackFrames = function (){};
+            destroy = function (){};
+            enumerate = function (arg0/*Thread[]*/){};
+            getAllStackTraces = function (){};
+            getContextClassLoader = function (){};
+            getDefaultUncaughtExceptionHandler = function (){};
+            getId = function (){};
+            getPriority = function (){};
+            getState = function (){};
+            getUncaughtExceptionHandler = function (){};
+            interrupt = function (){};
+            interrupted = function (){};
+            isAlive = function (){};
+            isDaemon = function (){};
+            resume = function (){};
+            setContextClassLoader = function (arg0/*ClassLoader*/){};
+            setDefaultUncaughtExceptionHandler = function (arg0/*UncaughtExceptionHandler*/){};
+            setName = function (arg0/*String*/){};
+            setUncaughtExceptionHandler = function (arg0/*UncaughtExceptionHandler*/){};
+            sleep = function (arg0/*long*/, arg1/*int*/){};
+            sleep = function (arg0/*long*/){};
+            stop = function (arg0/*Throwable*/){};
+            stop = function (){};
+            suspend = function (){};
+            wait = function (){};
+            wait = function (arg0/*long*/, arg1/*int*/){};
+            wait = function (arg0/*long*/){};
+            equals = function (arg0/*Object*/){};
+            hashCode = function (){};
+            getClass = function (){};
+            notify = function (){};
+            notifyAll = function (){};
+        }
+    }
+}

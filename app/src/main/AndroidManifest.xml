@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="net.zhuoweizhang.mcpelauncher.pro"
+    android:installLocation="auto"
+    android:versionCode="760140100"
+    android:versionName="0.14.1">
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <permission
+        android:name="net.zhuoweizhang.mcpelauncher.ADDON"
+        android:description="@string/permdesc_mcpelauncher_addon"
+        android:label="@string/permlab_mcpelauncher_addon"
+        android:protectionLevel="signature" />
+
+    <application
+        android:name="np.log.NPCrashApplication"
+        android:allowBackup="true"
+        android:extractNativeLibs="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:debuggable="true"
+        android:theme="@style/Theme.New"
+        android:requestLegacyExternalStorage="true"
+        tools:ignore="HardcodedDebugMode">
+
+
+        <meta-data
+            android:name="android.app.lib_name"
+            android:extractNativeLibs="true"
+            android:value="minecraftpe" />
+
+        <activity
+            android:name=".LauncherProActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="true"
+            android:extractNativeLibs="true"
+            android:screenOrientation="sensorLandscape">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:extractNativeLibs="true"
+                android:value="minecraftpe" />
+
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+        </activity>
+
+        <activity android:name="net.zhuoweizhang.mcpelauncher.ui.MainMenuOptionsActivity" />
+        <activity android:name="net.zhuoweizhang.mcpelauncher.ui.ManageAddonsActivity" />
+
+
+        <activity android:name="com.ipaulpro.afilechooser.FileChooserActivity" />
+        <activity android:name="net.zhuoweizhang.mcpelauncher.ui.NerdyStuffActivity" />
+        <activity android:name="net.zhuoweizhang.mcpelauncher.ui.ManagePatchesActivity" />
+        <activity android:name="net.zhuoweizhang.mcpelauncher.ui.AboutAppActivity" />
+        <activity
+            android:name="net.zhuoweizhang.mcpelauncher.api.ImportPatchActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="net.zhuoweizhang.mcpelauncher.action.IMPORT_PATCH" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="file" />
+                <data android:mimeType="*/*" />
+                <data android:host="*" />
+                <data android:pathPattern=".*\\.modpkg" />
+                <data android:pathPattern=".*\\..*\\.modpkg" />
+                <data android:pathPattern=".*\\..*\\..*\\.modpkg" />
+                <data android:pathPattern=".*\\..*\\..*\\..*\\.modpkg" />
+            </intent-filter>
+        </activity>
+
+        <activity-alias
+            android:name="net.zhuoweizhang.mcpelauncher.ImportPatchActivity"
+            android:exported="true"
+            android:targetActivity="net.zhuoweizhang.mcpelauncher.api.ImportPatchActivity" />
+
+        <activity
+            android:name="net.zhuoweizhang.mcpelauncher.ui.NoMinecraftActivity"
+            android:exported="false"
+            android:process=":CrashHandler"
+            android:stateNotNeeded="true" />
+        <activity
+            android:name="net.zhuoweizhang.mcpelauncher.ui.MinecraftNotSupportedActivity"
+            android:exported="false"
+            android:process=":CrashHandler"
+            android:stateNotNeeded="true" />
+        <activity
+            android:name="net.zhuoweizhang.mcpelauncher.api.ImportSkinActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="net.zhuoweizhang.mcpelauncher.action.SET_SKIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/png" />
+            </intent-filter>
+        </activity>
+
+        <activity-alias
+            android:name="net.zhuoweizhang.mcpelauncher.ImportSkinActivity"
+            android:exported="true"
+            android:targetActivity="net.zhuoweizhang.mcpelauncher.api.ImportSkinActivity" />
+
+        <activity
+            android:name="net.zhuoweizhang.mcpelauncher.api.ImportTexturepackActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="net.zhuoweizhang.mcpelauncher.action.SET_TEXTUREPACK" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="*/*" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="net.zhuoweizhang.mcpelauncher.api.ImportScriptActivity"
+            android:exported="true"
+            android:label="@string/pref_zz_manage_scripts">
+            <intent-filter>
+                <action android:name="net.zhuoweizhang.mcpelauncher.action.IMPORT_SCRIPT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="*/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="file" />
+                <data android:mimeType="*/*" />
+                <data android:host="*" />
+                <data android:pathPattern=".*\\.js" />
+                <data android:pathPattern=".*\\..*\\.js" />
+                <data android:pathPattern=".*\\..*\\..*\\.js" />
+                <data android:pathPattern=".*\\..*\\..*\\..*\\.js" />
+            </intent-filter>
+        </activity>
+        <activity android:name="net.zhuoweizhang.mcpelauncher.ui.ManageTexturepacksActivity" />
+        <activity android:name="net.zhuoweizhang.mcpelauncher.ui.ManageSkinsActivity" />
+        <activity
+            android:name="net.zhuoweizhang.mcpelauncher.ui.ManageScriptsActivity"
+            android:label="@string/pref_zz_manage_scripts" />
+        <activity
+            android:name="net.zhuoweizhang.mcpelauncher.ui.TexturePacksActivity"
+            android:label="@string/pref_texture_pack" />
+        <activity
+            android:name="net.zhuoweizhang.mcpelauncher.ui.GetSubstrateActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:process=":CrashHandler"
+            android:stateNotNeeded="true" />
+
+
+    </application>
+
+</manifest>
